@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Hania ♡</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; }
+  html, body { margin:0; min-height:100%; }
+  body {
+    font-family: Poppins, sans-serif;
+    background: linear-gradient(135deg, #fff7f8, #f7f1ff, #fffaf0);
+    color:#433746;
+    overflow-x:hidden;
+  }
+
+  .screen {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px 18px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .card {
+    width:min(680px, 94vw);
+    background:rgba(255,255,255,.78);
+    backdrop-filter: blur(14px);
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:30px;
+    padding:42px 28px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(110,78,110,.15);
+    position:relative;
+    z-index:5;
+  }
+
+  h1,h2 {
+    font-family:"DM Serif Display", serif;
+    font-weight:400;
+    margin:10px 0;
+  }
+  h1 { font-size:clamp(48px, 11vw, 82px); color:#8e5d78; }
+  h2 { font-size:clamp(34px, 8vw, 56px); color:#805b76; }
+  p { line-height:1.8; font-size:16px; }
+
+  .eyebrow {
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:11px;
+    color:#a06d8c;
+    font-weight:600;
+  }
+
+  button {
+    border:0;
+    border-radius:999px;
+    padding:14px 25px;
+    margin-top:18px;
+    background:#8e5d78;
+    color:white;
+    font:600 14px Poppins,sans-serif;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(142,93,120,.25);
+    transition:.2s transform, .2s box-shadow;
+  }
+  button:hover { transform:translateY(-2px); box-shadow:0 13px 28px rgba(142,93,120,.3); }
+
+  .hidden { display:none; }
+
+  .heart {
+    font-size:52px;
+    animation:pulse 1.7s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform:scale(1); }
+    50% { transform:scale(1.12); }
+  }
+
+  .balloon {
+    position:fixed;
+    bottom:-130px;
+    width:54px;
+    height:68px;
+    border-radius:50% 50% 48% 48%;
+    opacity:.82;
+    z-index:1;
+    animation:floatUp linear forwards;
+  }
+  .balloon:after {
+    content:"";
+    position:absolute;
+    width:1px;
+    height:85px;
+    background:rgba(90,70,90,.35);
+    left:50%;
+    top:66px;
+  }
+  .b1 { background:#e9a8b8; left:8%; animation-duration:8s; }
+  .b2 { background:#b8a9df; left:25%; animation-duration:10s; animation-delay:1s; }
+  .b3 { background:#f3c98b; left:48%; animation-duration:9s; animation-delay:.4s; }
+  .b4 { background:#9fc9bf; left:70%; animation-duration:11s; animation-delay:1.5s; }
+  .b5 { background:#d9a7d1; left:88%; animation-duration:8.5s; animation-delay:.7s; }
+
+  @keyframes floatUp {
+    from { transform:translateY(0) rotate(-5deg); }
+    to { transform:translateY(-125vh) rotate(12deg); }
+  }
+
+  .confetti {
+    position:fixed;
+    top:-15px;
+    width:8px;
+    height:14px;
+    z-index:20;
+    animation:fall 3.5s linear forwards;
+  }
+  @keyframes fall {
+    to { transform:translateY(110vh) rotate(720deg); opacity:0; }
+  }
+
+  .photos {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin:24px 0;
+  }
+  .photos img {
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(70,50,70,.12);
+  }
+  .photos img:first-child { grid-row:span 2; height:492px; }
+
+  .note {
+    background:#fff9e9;
+    border-radius:22px;
+    padding:22px;
+    margin-top:20px;
+    text-align:left;
+    border:1px solid #f5e7bd;
+  }
+
+  .cake {
+    font-size:82px;
+    margin:5px 0;
+    animation:float 2.5s ease-in-out infinite;
+  }
+  @keyframes float {
+    50% { transform:translateY(-7px); }
+  }
+
+  .tiny { font-size:12px; opacity:.65; margin-top:25px; }
+
+  @media (max-width:560px) {
+    .card { padding:34px 19px; border-radius:24px; }
+    .photos { grid-template-columns:1fr 1fr; }
+    .photos img { height:180px; }
+    .photos img:first-child { height:372px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="screen" id="start">
+  <div class="card">
+    <div class="heart">♡</div>
+    <div class="eyebrow">a tiny internet surprise for</div>
+    <h1>Hania</h1>
+    <p>Someone has made you a little something.<br>
+       No, you cannot skip straight to the end. 😌</p>
+    <button onclick="openSurprise()">Okay fine, open it 🎀</button>
+  </div>
+</section>
+
+<section class="screen hidden" id="main">
+  <div class="card">
+    <div class="eyebrow">today's main character</div>
+    <h2>Happy Birthday,<br>Hania! 🎂</h2>
+    <p>
+      Another year of you being you — and honestly, that's something worth celebrating.
+      I hope this year brings you the kind of happiness that sneaks up on you,
+      the kind of memories you randomly remember months later and smile at.
+    </p>
+
+    <div class="photos">
+      <img src="images/hania-garden-1.jpeg" alt="Hania">
+      <img src="images/hania-garden-2.jpeg" alt="Hania">
+      <img src="images/besties.jpeg" alt="Hania and her best friend">
+    </div>
+
+    <div class="note">
+      <strong>A little birthday note 💌</strong>
+      <p>
+        Hania, I hope you know how much the little things matter — the random
+        conversations, the ridiculous moments, the laughs that make absolutely
+        no sense to anyone else, and all the memories we've collected along the way.
+        <br><br>
+        I’m genuinely grateful that life happened to put you in my story.
+        May Allah bless your new year with peace, barakah, good health,
+        beautiful opportunities, and lots of reasons to smile.
+        And yes, may we create many more questionable memories together. 😭
+      </p>
+    </div>
+
+    <button onclick="showWish()">Wait... there's one more thing ✨</button>
+  </div>
+</section>
+
+<section class="screen hidden" id="wish">
+  <div class="card">
+    <div class="cake">🎂</div>
+    <div class="eyebrow">make a wish</div>
+    <h2>For you, Hania ♡</h2>
+    <p>
+      Close your eyes for a second, make a wish, and then press the button.
+    </p>
+    <button onclick="finale()">I made my wish ✨</button>
+    <p class="tiny" id="finalText"></p>
+  </div>
+</section>
+
+<script>
+function makeBalloons() {
+  for (let i = 0; i < 5; i++) {
+    const b = document.createElement("div");
+    b.className = "balloon b" + (i + 1);
+    document.body.appendChild(b);
+  }
+}
+
+function confetti() {
+  for (let i = 0; i < 100; i++) {
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.animationDelay = Math.random() * 1.2 + "s";
+    c.style.transform = `rotate(${Math.random()*180}deg)`;
+    c.style.background = ["#e9a8b8","#b8a9df","#f3c98b","#9fc9bf","#d9a7d1"][i%5];
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+
+function openSurprise() {
+  document.getElementById("start").classList.add("hidden");
+  document.getElementById("main").classList.remove("hidden");
+  makeBalloons();
+  confetti();
+}
+
+function showWish() {
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("wish").classList.remove("hidden");
+  window.scrollTo(0,0);
+  confetti();
+}
+
+function finale() {
+  confetti();
+  document.getElementById("finalText").innerHTML =
+    "And now you're officially allowed to go eat cake. 🎀<br><br>" +
+    "Happy birthday once again, Hania. Here's to another year of being us. ♡";
+}
+</script>
+</body>
+</html>
